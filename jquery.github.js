@@ -1,8 +1,8 @@
 /*
  * jQuery Github Widget
  * Author: Joe Pettersson, @Joe8Bit
- * http://www.joepettersson.com/jquery-github-widget
- * https://github.com/JoePettersson/jquery-github-widget
+ * http://www.joepettersson.com/jquery-github-widget/
+ * https://github.com/JoePettersson/jquery-github-widget/
  * Licensed under the MIT license
  * Version: 1.0
  *
