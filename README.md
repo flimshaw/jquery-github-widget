@@ -31,7 +31,7 @@ The only required option is the user name of the Github user you want the widget
 
 **Note:** if you do not specify a username when running the plugin, it will list me instead, as I a set as the default.
 
-**If you want use the default style for the widget, and I assume you do, then you also need to include the provided stylehseet and image sprite (within this repo).** 
+**If you want use the default style for the widget, and I assume you do, then you also need to include the provided stylesheet and image sprite (within this repo).** 
 
 ###Options
 
@@ -62,15 +62,15 @@ Underneath the users name in the header of the widget is an area displaying the 
 
 #####Width
     width
-    	Accepted parameters: A string representing a custom width for the widget, 		in CSS complicant units (px/%/em/pt)
+    	Accepted parameters: A string representing a custom width for the widget, in CSS compliant units (px/%/em/pt)
     	
 The default width of the widget is 400px, and I wouldn't recommend setting this below about 250px as the layout starts to look a little weird.
 
 #####Show repos
     show_repos
-    	Accepted parameters: number/interger
+    	Accepted parameters: number/integer
 
-The number of repos you wish to display within the widget, with a maximum of 30. This is a limit set by Github for one page of their API, you can get more but if you want to show mroe than 30 in a simple widget like this you're probably not getting the best use out of it anyway. The default is 10.
+The number of repos you wish to display within the widget, with a maximum of 30. This is a limit set by Github for one page of their API, you can get more but if you want to show more than 30 in a simple widget like this you're probably not getting the best use out of it anyway. The default is 10.
 
 #####Oldest first
     oldest_first
@@ -88,6 +88,6 @@ A. Yes. No problem, just attach them to more than one element on the page.
 **Q. What browsers does this function in?**    
 A. This widget functions properly in *modern* browsers, and the default style uses many CSS3 features that will not work for legacy browsers (<IE9 I'm looking at you!). However, I've made some effort to support legacy browsers in the CSS so it shouldn't look too crappy. Apart from that there is no reason it shouldn't work fine in legacy browsers.
 
-**Q. Should I strive to acheive all my goals in life and sacrifice a social life or breeze theough life having fun?**    
+**Q. Should I strive to achieve all my goals in life and sacrifice a social life or breeze through life having fun?**    
 A. Only questions related to the plugin please. I'm not your therapist. But the second one. 
    
