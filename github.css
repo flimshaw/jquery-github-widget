@@ -14,7 +14,7 @@
 html[xmlns] .clear { display: block;}
 * html .clear { height: 1%;}
 
-#github #header #logo a, #github #repos .fork, #github #header #github-followers a {
+#github #header #logo a, #github #repos .fork {
 	background-image: url("github-sprite.png");
 	background-repeat: no-repeat;
 }
@@ -65,20 +65,29 @@ html[xmlns] .clear { display: block;}
 	box-shadow: inset 1px 1px 1px 0px rgba(0,0,0,0.7);
 	border: 1px solid rgba(0,0,0,0.7);
 }
+.no-bottom-border {
+	-webkit-border-bottom-right-radius: 0!important;
+	-webkit-border-bottom-left-radius: 0!important;
+	border-bottom-right-radius: 0!important;
+	border-bottom-left-radius: 0!important;
+}
 #github #header #extended-user-info {
 	display: none;
 	position: absolute;
 	width: 60%;
-	top: 50px;
+	top: 45px;
 	right: 10px;
 	padding: 15px;
 	color: #fff;
-	background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.9);
 	border: 1px solid #000;
 	text-shadow: 1px 1px 1px #000;
 	font-size: 11px;
 	-webkit-border-radius: 3px;
-    border-radius: 3px;
+	-webkit-border-top-right-radius: 0;
+	border-radius: 3px;
+	border-top-right-radius: 0;
+	z-index: 500;
 }
 #github #header #extended-user-info .name {
 	font-size: 13px;
@@ -90,8 +99,8 @@ html[xmlns] .clear { display: block;}
 }
 #github #header #extended-user-info .bio {
 	border-top: 1px solid rgba(255,255,255,0.4);
-	padding-top: 10px;
-	margin: 10px 0px;
+	padding-top: 15px;
+	margin: 15px 0px 25px;
 }
 #github #header #extended-user-info .repos, #github #header #extended-user-info .gists {
 	display: inline-block;
@@ -111,17 +120,34 @@ html[xmlns] .clear { display: block;}
 #github #header #extended-user-info p {
 	margin: 0px;
 }
-#github #header #github-followers {
+#github #header #github-user-data {
 	float: right;
-	margin: -1px 5px 0px 0px;
-	padding: 10px 12px;
+	margin: 3px 0px 0px 0px;
+	padding: 0px 12px;
 	text-shadow: 0px 0px 1px #fff;
+	text-align: right;
+	color: #9f9f9f;
 }
-#github #header #github-followers a {
-	color: #444;
+#github #header #github-user-data h2 {
+	margin: 0px;
+	line-height: 12px;
+}
+#github #header #github-user-data h2 a {
+	font-size: 14px;
+	font-weight: normal;
 	text-decoration: none;
-	background-position: 0px -62px;
-	padding-left: 20px;
+	color: #444;
+	text-shadow: 1px 1px 1px #fff;
+}
+#github #header #github-user-data a:hover {
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=8);
+}
+#github #header #github-user-data #current-followers, #github #header #github-user-data #header-total-repos {
+	color: #686868;
+	text-decoration: none;
+	font-size: 11px;
 }
 #github #repos {
 	background: #fff;
@@ -147,6 +173,57 @@ html[xmlns] .clear { display: block;}
 	margin: 0px;
 	padding: 0px;
 }
+#github #repos li .left {
+	float: left;
+	width: 70%:
+}
+#github #repos li .right {
+	float: right;
+	width: 30%;
+	opacity: 0.3;
+	-moz-opacity: 0.3;
+	filter:alpha(opacity=3);
+}
+#github #repos li.double .right {
+	margin-top: 5px;
+}
+#github #repos li .right span {
+	display: inline-block;
+	padding: 3px 7px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	font-size: 11px;
+	margin-left: 3px;
+	-webkit-border-radius: 2px;
+    border-radius: 2px;
+    float: right;
+    position: relative;
+}
+#github .github-tooltip-content {
+	position: absolute;
+	top: 23px;
+	background: rgba(0,0,0,0.9);
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+	border: 1px solid #000;
+	padding: 7px 10px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	right: 0px;
+	z-index: 250;
+	min-width: 150px;
+	text-align: center;
+}
+#github #repos li .right .forks {
+	background: #7e943a;
+}
+#github #repos li .right .watchers {
+	background: #357292;
+}
+#github #repos li .right .issues {
+	background: #a53131;
+}
+
 #github #repos li .meta-data {
 	font-size: 11px;
 	color: #999;
@@ -155,9 +232,26 @@ html[xmlns] .clear { display: block;}
 	padding-left: 18px;
 	background-position: 0px -35px;
 }
+#github #repos li {
+	position: relative;
+}
 #github #repos li .title a {
 	color: #444;
 	text-decoration: none;
+}
+#github #repos li .title a .github-tooltip-content {
+	left: 5px;
+	top: 6px;
+	font-size: 11px;
+	text-align: left;
+	width: 72%;
+	line-height: 120%;
+	color: #999;
+}
+#github #repos li .title a .github-tooltip-content p {
+	font-size: 13px;
+	margin-bottom: 10px;
+	color: #fff;
 }
 #github #repos li .title a:hover{
 	text-decoration: underline;
