@@ -1,0 +1,167 @@
+/*Root wrapper*/
+#github {
+	font-size: 13px;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.4);
+	color: #444;
+	/*-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);  */
+}
+/*Utility styles*/
+.clear:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+html[xmlns] .clear { display: block;}
+* html .clear { height: 1%;}
+
+#github #header #logo a, #github #repos .fork, #github #header #github-followers a {
+	background-image: url("github-sprite.png");
+	background-repeat: no-repeat;
+}
+/*Header*/
+#github #header, #github #footer {
+	background: #d6d3d2;
+	background: -moz-linear-gradient(top, #d6d3d2 0%, #a9aaa7 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d6d3d2), color-stop(100%,#a9aaa7));
+	background: -webkit-linear-gradient(top, #d6d3d2 0%,#a9aaa7 100%); 
+	background: -o-linear-gradient(top, #d6d3d2 0%,#a9aaa7 100%);
+	background: -ms-linear-gradient(top, #d6d3d2 0%,#a9aaa7 100%);
+	background: linear-gradient(top, #d6d3d2 0%,#a9aaa7 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d3d2', endColorstr='#a9aaa7',GradientType=0 );
+}
+#github #header {
+	padding: 10px 10px 8px;
+	border-top: 1px solid #eeedee;
+	border-bottom:: 1px solid #bcb9b9;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	position: relative;
+}
+#github #header #logo {
+	float: left;
+	margin-top: 1px;
+}
+#github #header #logo a {
+	display: block;
+	width: 70px;
+	height: 31px;
+	text-indent: -9999px;
+	color: #444;
+	background-position: 0px 0px;
+}
+#github #header #user {
+	float: right;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border-bottom: 1px solid #c0c4c1;
+}
+#github #header #user img {
+	display: block;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 1px 1px 1px 0px rgba(0,0,0,0.7);
+	box-shadow: inset 1px 1px 1px 0px rgba(0,0,0,0.7);
+	border: 1px solid rgba(0,0,0,0.7);
+}
+#github #header #extended-user-info {
+	display: none;
+	position: absolute;
+	width: 60%;
+	top: 50px;
+	right: 10px;
+	padding: 15px;
+	color: #fff;
+	background: rgba(0,0,0,0.8);
+	border: 1px solid #000;
+	text-shadow: 1px 1px 1px #000;
+	font-size: 11px;
+	-webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+#github #header #extended-user-info .name {
+	font-size: 13px;
+}
+#github #header #extended-user-info .place {
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter:alpha(opacity=5);
+}
+#github #header #extended-user-info .bio {
+	border-top: 1px solid rgba(255,255,255,0.4);
+	padding-top: 10px;
+	margin: 10px 0px;
+}
+#github #header #extended-user-info .repos, #github #header #extended-user-info .gists {
+	display: inline-block;
+	padding: 3px 5px 4px;
+	-webkit-border-radius: 2px;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+#github #header #extended-user-info .repos {
+	background: #7e943a;
+	text-shadow: 1px 1px 1px #64772a;
+}
+#github #header #extended-user-info .gists {
+	background: #357292;
+	text-shadow: 1px 1px 1px #1e4e67;
+}
+#github #header #extended-user-info p {
+	margin: 0px;
+}
+#github #header #github-followers {
+	float: right;
+	margin: -1px 5px 0px 0px;
+	padding: 10px 12px;
+	text-shadow: 0px 0px 1px #fff;
+}
+#github #header #github-followers a {
+	color: #444;
+	text-decoration: none;
+	background-position: 0px -62px;
+	padding-left: 20px;
+}
+#github #repos {
+	background: #fff;
+	border-top: 1px solid #868686;
+}
+#github #repos #github-loader {
+	width: 32px;
+	height: 32px;
+	margin: 75px auto;
+	background: url("https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif") no-repeat;
+}
+#github #repos ul {
+	display: none;
+	padding: 0px;
+	margin: 0px;
+}
+#github #repos li {
+	list-style: none;
+	border-bottom: 1px solid #e3e3e3;
+	padding: 13px;
+}
+#github #repos li p {
+	margin: 0px;
+	padding: 0px;
+}
+#github #repos li .meta-data {
+	font-size: 11px;
+	color: #999;
+}
+#github #repos .fork {
+	padding-left: 18px;
+	background-position: 0px -35px;
+}
+#github #repos li .title a {
+	color: #444;
+	text-decoration: none;
+}
+#github #repos li .title a:hover{
+	text-decoration: underline;
+}
+#github #repos li:last-child {
+	border-bottom: 0px;
+}
