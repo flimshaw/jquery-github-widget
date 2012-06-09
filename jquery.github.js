@@ -54,7 +54,7 @@
 					// Build our repos partial and append it to the layout, which is already in the DOM
 					$(el).find("#repos ul").append(Github.prototype.view_partial_repos(data, options, el));
 					// Fade out the Github loader gif, and then fade in the repos we just appended
-					$(el).find("#repos #github-loader").fadeOut(250, function(){
+					$(el).find("#repos #github-loader").slideUp(250, function(){
 						$(el).find("#repos ul").slideDown(250);
 					});
 					// Init our bind function once everything is present within the DOM
