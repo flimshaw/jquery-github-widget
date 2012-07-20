@@ -90,4 +90,11 @@ A. This widget functions properly in *modern* browsers, and the default style us
 
 **Q. Should I strive to achieve all my goals in life and sacrifice a social life or breeze through life having fun?**    
 A. Only questions related to the plugin please. I'm not your therapist. But the second one. 
+
+
+###Minifying
+-----
+If you'd like to modify the development verision of the plugin, you need to use the NodeJS NPM module [UglifyJS](https://github.com/mishoo/UglifyJS/). Run if with the following flags, so as to prevent function/variable name munging:
+
+    uglifyjs -nmf jquery.github.js
    
