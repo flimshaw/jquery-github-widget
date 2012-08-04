@@ -1,5 +1,7 @@
 #jQuery Github Widget
 
+[![Build Status](https://secure.travis-ci.org/JoePettersson/jquery-github-widget.png?branch=master)](http://travis-ci.org/JoePettersson/jquery-github-widget)
+
 * [Documentation](http://www.joepettersson.com/jquery-github-widget/)
 * [Demos](http://www.joepettersson.com/jquery-github-widget/)
 * [@Joe8Bit](http://twitter.com/Joe8Bit/)
