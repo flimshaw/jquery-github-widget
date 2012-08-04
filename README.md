@@ -92,9 +92,35 @@ A. This widget functions properly in *modern* browsers, and the default style us
 A. Only questions related to the plugin please. I'm not your therapist. But the second one. 
 
 
-###Minifying
+###Contributing
 -----
-If you'd like to modify the development verision of the plugin, you need to use the NodeJS NPM module [UglifyJS](https://github.com/mishoo/UglifyJS/). Run if with the following flags, so as to prevent function/variable name munging:
+1. Fork
+2. Do yo' thang
+2. Send pull request
 
-    uglifyjs -nmf jquery.github.js
-   
+**Notes and requirements for contributing:**
+
+* All code must be linted.
+* All contributions must have tests.
+* You must run the build command to minify `src` before submitting pull request.
+
+###Building and Testing
+This scripts build and test process is based on the [NodeJS](http://nodejs.org) toolchain, so [NodeJS](http://nodejs.org) and [NPM](http://npmjs.org) being installed are prerequisities.
+
+The tests are also run with [PhantomJS](http://phantomjs.org), so it will need to be installed first, if it isn't already, to do so in OSX with the awesome [HomeBrew](http://mxcl.github.com/homebrew/) package manager just run the following command:
+
+	brew install phantomjs
+
+ 
+When you have Node/NPM/Phantom installed, you can use the following commands to build the script:
+
+	git clone https://github.com/JoePettersson/jquery-github-widget.git
+	cd jquery-github-widget
+	npm install
+	grunt
+
+Running the final `grunt` command will lint the JavaScript, run the tests and minify the JavaScript and CSS into the `dist` directory.
+
+If you just wish to run the tests, you can run the following command form the project root:
+
+	grunt jasmine
