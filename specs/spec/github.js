@@ -66,8 +66,37 @@ describe("Github Widget", function() {
 		it("by displaying extended user information when hovering on their avatar", function() {
 			$('#ghw-user a').trigger('mouseover');
 			expect($("#ghw-extended-user-info")).toBeVisible();
-			$('#ghw-user a').trigger('mouseout');
-			expect($("#ghw-extended-user-info")).not.toBeVisible();
+		});
+
+		it("by displaying a repo description when hovering on the repo title", function() {
+			$('.ghw-title a').trigger('mouseover');
+			expect($(".ghw-github-tooltip-content")).toBeVisible();
+		});
+
+		it("by displaying extened info about a repos forks when hovering", function() {
+			$('.ghw-forks:first-child').trigger('mouseover');
+			expect($(".ghw-forks:first-child .ghw-github-tooltip-content")).toBeVisible();
+			expect($(".ghw-forks:first-child .ghw-github-tooltip-content")).not.toBeEmpty();
+		});
+
+	});
+
+	describe("should load the correct information from Github for the default user", function() {
+
+		it("by displaying the correct user name", function() {
+			expect($("#ghw-github-user-data h2 a").text()).toEqual("JoePettersson");
+		});
+
+		it("by displaying the correct number of followers", function() {
+			expect(parseFloat($("#ghw-current-followers").text())).toBeGreaterThan(1);
+		});
+
+		it("by displaying one of the correct repos", function() {
+			expect($(".ghw-title:first-child a").text()).toContain("A-simple-jQuery-powered-image-slider");
+		});
+
+		it("by containging the correct descrption for one of the repos", function() {
+			expect($(".ghw-title:first-child a").attr("data-description")).toContain("<p>A-simple-jQuery-powered-image-slider</p>A simple but elegant image slider based on a design by Orman Clark");
 		});
 
 	});

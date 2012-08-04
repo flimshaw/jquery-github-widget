@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 		},
 		jasmine: {
 			all: {
-				src:['specs/SpecRunner.html'],
+				src:['specs/*.html'],
 				errorReporting: true,
 				timeout: 20000
 			}
