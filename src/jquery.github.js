@@ -30,21 +30,22 @@
 			// Explicitly set our options and element so they can be inherited by functions
 			// Then init our functions to build the widget
 			var el = this.element,
-				options = this.options,
-				user = this.model("user", options.user, function (data) {
-					// Build layout view with user data and append it to the specified element
-					$(el).append(Github.prototype.view_layout(data.data, options));
-				}),
-				repos = this.model("repos", options.user, function (data) {
-					// Build our repos partial and append it to the layout, which is already in the DOM
-					$(el).find("#ghw-repos ul").append(Github.prototype.view_partial_repos(data, options, el));
-					// Fade out the Github loader gif, and then fade in the repos we just appended
-					$(el).find("#ghw-repos #ghw-github-loader").slideUp(250, function () {
-						$(el).find("#ghw-repos ul").slideDown(250);
-					});
-					// Init our bind function once everything is present within the DOM
-					Github.prototype.bind(options);
-				});
+				options = this.options;
+			
+			var feedUrl = "https://api.github.com/users/" + options.user + "/events/public?per_page=5";
+			var self = this;
+			
+			// get our template ready
+			var t = _.template($("#template_github").html());
+
+			// load flickr photos
+			$.getJSON(feedUrl, function(data) {
+				var data = data.slice(0, 10);
+				for(var i = 0; i < data.length; i++) {
+					$(el).append( t( { "e": data[i]} ) );
+				}
+				$(".timeago").timeago();
+			});
 		},
 
 		// Our user model, get and set user data
