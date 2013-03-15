@@ -32,7 +32,7 @@
 			var el = this.element,
 				options = this.options;
 			
-			var feedUrl = "https://api.github.com/users/" + options.user + "/events/public?per_page=5";
+			var feedUrl = "https://api.github.com/users/" + options.user + "/events/public?per_page=5&callback=?";
 			var self = this;
 			
 			// get our template ready
@@ -40,10 +40,14 @@
 
 			// load flickr photos
 			$.getJSON(feedUrl, function(data) {
-				var data = data.slice(0, 10);
+				var data = _.filter(data.data, function(d) {
+					return d.type == "PushEvent";
+				}).slice(0, 10);;
 				for(var i = 0; i < data.length; i++) {
+					console.log(data[i]);
 					$(el).append( t( { "e": data[i]} ) );
 				}
+				console.log("logged");
 				$(".timeago").timeago();
 			});
 		},
